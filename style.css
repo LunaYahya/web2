@@ -109,4 +109,8 @@ body {
   width: 100%;
 }
 
+.checkbox {
+  transform: scale(1.2);
+  margin-right: 10px;
+}
 
