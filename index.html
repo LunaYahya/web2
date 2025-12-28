@@ -10,30 +10,32 @@
     />
   </head>
   <body>
-    <h2 class="title">Todo Input</h2>
+    <div class="container">
+      <h2 class="title">Todo Input</h2>
 
-    <div class="todo_box">
-      <input type="text" id="todoInput" placeholder="New Todo" />
-      <button id="addBtn" onclick="addTask()">Add new task</button>
-      <div class="error-container">
-        <div id="error-message" class="error-message">
-          Task must be at least 5 characters long
+      <div class="todo_box">
+        <input type="text" id="todoInput" placeholder="New Todo" />
+        <button id="addBtn" onclick="addTask()">Add new task</button>
+        <div class="error-container">
+          <div id="error-message" class="error-message">
+            Task must be at least 5 characters long
+          </div>
         </div>
       </div>
-    </div>
 
-    <h2 class="title">Todo List</h2>
-    <div class="filters">
-      <button class="filter-btn" data-status="all">All</button>
-      <button class="filter-btn" data-status="done">Done</button>
-      <button class="filter-btn" data-status="todo">Todo</button>
-    </div>
+      <h2 class="title">Todo List</h2>
+      <div class="filters">
+        <button class="filter-btn" data-status="all">All</button>
+        <button class="filter-btn" data-status="done">Done</button>
+        <button class="filter-btn" data-status="todo">Todo</button>
+      </div>
 
-    <div id="todoList"></div>
+      <div id="todoList"></div>
 
-    <div class="Delete-actions">
-      <button id="deleteDone">Delete Done Tasks</button>
-      <button id="deleteAll">Delete All Tasks</button>
+      <div class="Delete-actions">
+        <button id="deleteDone">Delete Done Tasks</button>
+        <button id="deleteAll">Delete All Tasks</button>
+      </div>
     </div>
   </body>
   <script src="script.js"></script>
