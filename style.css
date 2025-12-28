@@ -72,4 +72,26 @@ body {
   color: #fff;
 }
 
+.Delete-actions {
+  max-width: 900px;
+  margin: 15px auto;
+  display: flex;
+  gap: 10px;
+}
+
+.Delete-actions button {
+  flex: 1;
+  padding: 10px 0;
+  border: none;
+  border-radius: 5px;
+  background-color: #fa2912; 
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.Delete-actions button:hover {
+  background-color: #761c12;
+}
+
 
