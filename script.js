@@ -39,7 +39,7 @@ function renderTasks() {
                   <button >
                       <i class="fa-regular fa-pen-to-square" style="color: #FFD43B;"></i>
                   </button>
-                  <button onclick="initDeleteTask(${index})">
+                  <button >
                       <i class="fas fa-trash-alt"></i>  
                   </button>
               </div>
