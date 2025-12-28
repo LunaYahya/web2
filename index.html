@@ -10,7 +10,12 @@
 
     <div class="todo_box">
       <input type="text" id="todoInput" placeholder="New Todo" />
-      <button id="addBtn">Add new task</button>
+      <button id="addBtn" onclick="addTask()">Add new task</button>
+      <div class="error-container">
+        <div id="error-message" class="error-message">
+          Task must be at least 5 characters long
+        </div>
+      </div>
     </div>
 
     <h2 class="title">Todo List</h2>
@@ -25,4 +30,5 @@
       <button id="deleteAll">Delete All Tasks</button>
     </div>
   </body>
+  <script src="script.js"></script>
 </html>

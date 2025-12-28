@@ -94,4 +94,19 @@ body {
   background-color: #761c12;
 }
 
+.error-message {
+  color: #fa2912;
+  font-size: 14px;
+  margin-top: 5px;
+  display: none;
+  text-align: left;  
+  width: 100%;        
+}
+
+.error-container {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+}
+
 
