@@ -48,6 +48,8 @@ function renderTasks() {
   });
 }
 
+renderTasks();
+
 function addTask() {
   const input = document.getElementById("todoInput");
   const taskText = input.value.trim();
