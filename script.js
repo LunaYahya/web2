@@ -36,10 +36,10 @@ function renderTasks() {
                   <input type="checkbox" class="checkbox" ${
                     task.done ? "checked" : ""
                   } >
-                  <button >
+                  <button  >
                       <i class="fa-regular fa-pen-to-square" style="color: #FFD43B;"></i>
                   </button>
-                  <button >
+                  <button onclick="initDeleteTask(${index})">
                       <i class="fas fa-trash-alt"></i>  
                   </button>
               </div>
@@ -64,4 +64,14 @@ function addTask() {
   input.value = "";
   errorMessage.style.display = "none";
   renderTasks();
+}
+
+function initDeleteTask(index) {
+  deleteIndex = index;
+  openModal();
+}
+
+function openModal() {
+  const modal = document.getElementById("confirmModal");
+  modal.style.display = "flex";
 }
