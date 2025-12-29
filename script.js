@@ -75,3 +75,8 @@ function openModal() {
   const modal = document.getElementById("confirmModal");
   modal.style.display = "flex";
 }
+
+function closeModal() {
+  const modal = document.getElementById("confirmModal");
+  modal.style.display = "none";
+}
