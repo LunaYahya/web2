@@ -80,3 +80,12 @@ function closeModal() {
   const modal = document.getElementById("confirmModal");
   modal.style.display = "none";
 }
+
+function confirmDeleteTask() {
+  if (deleteIndex !== null) {
+    tasks.splice(deleteIndex, 1);
+    renderTasks();
+    deleteIndex = null;
+  }
+  closeModal();
+}
