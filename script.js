@@ -69,7 +69,10 @@ function addTask() {
     return;
   }
 
-  if (taskText.length > 0 && tasks.some((task) => task.text === taskText)) {
+  const duplicateError =
+    taskText.length > 0 &&
+    tasks.filter((task) => task.text === taskText).length > 0;
+  if (duplicateError) {
     duplicate_error_message.style.display = "block";
     return;
   }
@@ -122,13 +125,23 @@ function editTask(index) {
 
 function saveEditTask() {
   const newTaskName = document.getElementById("renameInput").value.trim();
-  if (newTaskName.length >= minTaskLength) {
-    tasks[currentEditIndex].text = newTaskName;
-    renderTasks();
-    closeRenameModal();
-  } else {
+  const lengthError = newTaskName.length < minTaskLength;
+  const duplicateError =
+    newTaskName.length > 0 &&
+    tasks.filter((task) => task.text === newTaskName).length > 0;
+
+  if (lengthError) {
     alert("Task must be at least 5 characters long");
+    return;
   }
+  if (duplicateError) {
+    alert("Task already exists");
+    return;
+  }
+
+  tasks[currentEditIndex].text = newTaskName;
+  renderTasks();
+  closeRenameModal();
 }
 
 function closeRenameModal() {
