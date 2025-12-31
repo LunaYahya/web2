@@ -148,3 +148,8 @@ function confirmDeleteDoneTasks() {
   tasks = tasks.filter((task) => !task.done);
   renderTasks();
 }
+
+function deleteAllTasks() {
+  tasks = [];
+  renderTasks();
+}
