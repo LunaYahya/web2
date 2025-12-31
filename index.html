@@ -79,8 +79,10 @@
         <h3>Rename Task</h3>
         <input type="text" id="renameInput" placeholder="New task name" />
         <div class="modal-buttons">
-          <button style="background-color: green">Save</button>
-          <button>Cancel</button>
+          <button onclick="saveEditTask()" style="background-color: green">
+            Save
+          </button>
+          <button onclick="closeRenameModal()">Cancel</button>
         </div>
       </div>
     </div>

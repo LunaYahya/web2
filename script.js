@@ -9,6 +9,7 @@ let tasks = [
 let filter = "all";
 let currentEditIndex = null;
 let deleteIndex = null;
+const minTaskLength = 5;
 
 function renderTasks() {
   const list = document.getElementById("todoList");
@@ -55,7 +56,7 @@ function addTask() {
   const taskText = input.value.trim();
   const errorMessage = document.getElementById("error-message");
 
-  if (taskText.length < 5) {
+  if (taskText.length < minTaskLength) {
     errorMessage.style.display = "block";
     return;
   }
@@ -103,4 +104,19 @@ function editTask(index) {
   currentEditIndex = index;
   document.getElementById("renameModal").value = tasks[index].text;
   openRenameModal();
+}
+
+function saveEditTask() {
+  const newTaskName = document.getElementById("renameInput").value.trim();
+  if (newTaskName.length >= minTaskLength) {
+    tasks[currentEditIndex].text = newTaskName;
+    renderTasks();
+    closeRenameModal();
+  } else {
+    alert("Task must be at least 5 characters long");
+  }
+}
+
+function closeRenameModal() {
+  document.getElementById("renameModal").style.display = "none";
 }
