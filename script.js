@@ -89,3 +89,8 @@ function confirmDeleteTask() {
   }
   closeModal();
 }
+
+function filterTasks(type) {
+  filter = type;
+  renderTasks();
+}

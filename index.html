@@ -25,9 +25,27 @@
 
       <h2 class="title">Todo List</h2>
       <div class="filters">
-        <button class="filter-btn" data-status="all">All</button>
-        <button class="filter-btn" data-status="done">Done</button>
-        <button class="filter-btn" data-status="todo">Todo</button>
+        <button
+          class="filter-btn"
+          data-status="all"
+          onclick="filterTasks('all')"
+        >
+          All
+        </button>
+        <button
+          class="filter-btn"
+          data-status="done"
+          onclick="filterTasks('done')"
+        >
+          Done
+        </button>
+        <button
+          class="filter-btn"
+          data-status="todo"
+          onclick="filterTasks('todo')"
+        >
+          Todo
+        </button>
       </div>
 
       <div id="todoList"></div>
