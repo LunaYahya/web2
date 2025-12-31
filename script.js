@@ -14,7 +14,6 @@ const minTaskLength = 5;
 function renderTasks() {
   const list = document.getElementById("todoList");
   list.innerHTML = "";
-
   const filteredTasks = tasks.filter((task) => {
     if (filter === "all") return true;
     if (filter === "done") return task.done;
@@ -54,16 +53,25 @@ renderTasks();
 function addTask() {
   const input = document.getElementById("todoInput");
   const taskText = input.value.trim();
-  const errorMessage = document.getElementById("error-message");
+  const length_error_message = document.getElementById("length-error-message");
+  const duplicate_error_message = document.getElementById(
+    "duplicate-error-message"
+  );
 
   if (taskText.length < minTaskLength) {
-    errorMessage.style.display = "block";
+    length_error_message.style.display = "block";
+    return;
+  }
+
+  if (taskText.length > 0 && tasks.some((task) => task.text === taskText)) {
+    duplicate_error_message.style.display = "block";
     return;
   }
 
   tasks.push({ text: taskText, done: false });
   input.value = "";
-  errorMessage.style.display = "none";
+  length_error_message.style.display = "none";
+  duplicate_error_message.style.display = "none";
   renderTasks();
 }
 
@@ -122,6 +130,5 @@ function closeRenameModal() {
 }
 
 function toggleTaskStatus(index) {
-  tasks[index].done = !tasks[index].done;
   renderTasks();
 }

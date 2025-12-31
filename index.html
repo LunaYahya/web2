@@ -17,7 +17,10 @@
         <input type="text" id="todoInput" placeholder="New Todo" />
         <button id="addBtn" onclick="addTask()">Add new task</button>
         <div class="error-container">
-          <div id="error-message" class="error-message">
+          <div id="duplicate-error-message" class="error-messag">
+            Task already exists
+          </div>
+          <div id="length-error-message" class="error-message">
             Task must be at least 5 characters long
           </div>
         </div>
