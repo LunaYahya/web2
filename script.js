@@ -36,7 +36,7 @@ function renderTasks() {
                   <input type="checkbox" class="checkbox" ${
                     task.done ? "checked" : ""
                   } >
-                  <button  >
+                  <button onclick="editTask(${index})" id="editBtn">
                       <i class="fa-regular fa-pen-to-square" style="color: #FFD43B;"></i>
                   </button>
                   <button onclick="initDeleteTask(${index})">
@@ -68,10 +68,10 @@ function addTask() {
 
 function initDeleteTask(index) {
   deleteIndex = index;
-  openModal();
+  openConfirmModal();
 }
 
-function openModal() {
+function openConfirmModal() {
   const modal = document.getElementById("confirmModal");
   modal.style.display = "flex";
 }
@@ -93,4 +93,14 @@ function confirmDeleteTask() {
 function filterTasks(type) {
   filter = type;
   renderTasks();
+}
+
+function openRenameModal() {
+  document.getElementById("renameModal").style.display = "flex";
+}
+
+function editTask(index) {
+  currentEditIndex = index;
+  document.getElementById("renameModal").value = tasks[index].text;
+  openRenameModal();
 }
