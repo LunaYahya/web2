@@ -11,14 +11,20 @@ let currentEditIndex = null;
 let deleteIndex = null;
 const minTaskLength = 5;
 
-function renderTasks() {
-  const list = document.getElementById("todoList");
-  list.innerHTML = "";
+function getFilteredTasks() {
   const filteredTasks = tasks.filter((task) => {
     if (filter === "all") return true;
     if (filter === "done") return task.done;
     if (filter === "todo") return !task.done;
   });
+  return filteredTasks;
+}
+
+function renderTasks() {
+  const list = document.getElementById("todoList");
+  list.innerHTML = "";
+
+  const filteredTasks = getFilteredTasks();
 
   if (filter === "done" && filteredTasks.length === 0) {
     list.innerHTML = `<div class="no-tasks">No tasks.</div>`;
@@ -130,5 +136,10 @@ function closeRenameModal() {
 }
 
 function toggleTaskStatus(index) {
+  const filteredTasks = getFilteredTasks();
+  const selectedTask = filteredTasks[index];
+  const taskIndex = tasks.findIndex((task) => task.text === selectedTask.text);
+
+  tasks[taskIndex].done = !tasks[taskIndex].done;
   renderTasks();
 }
