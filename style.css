@@ -198,3 +198,7 @@ body {
 .modal-buttons button:hover {
   background-color: #5b0606;
 }
+
+.no-tasks{
+  text-align: center;
+}

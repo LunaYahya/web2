@@ -21,7 +21,7 @@ function renderTasks() {
   });
 
   if (filter === "done" && filteredTasks.length === 0) {
-    list.innerHTML = `<div>No tasks.</div>`;
+    list.innerHTML = `<div class="no-tasks">No tasks.</div>`;
     return;
   }
 
