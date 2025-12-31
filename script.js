@@ -34,9 +34,9 @@ function renderTasks() {
                   <span class="${task.done ? "done" : ""}">${task.text}</span>
               </div>
               <div>
-                  <input type="checkbox" class="checkbox" ${
-                    task.done ? "checked" : ""
-                  } >
+                  <input type="checkbox" onchange="toggleTaskStatus(${index})" class="checkbox" ${
+      task.done ? "checked" : ""
+    } >
                   <button onclick="editTask(${index})" id="editBtn">
                       <i class="fa-regular fa-pen-to-square" style="color: #FFD43B;"></i>
                   </button>
@@ -119,4 +119,9 @@ function saveEditTask() {
 
 function closeRenameModal() {
   document.getElementById("renameModal").style.display = "none";
+}
+
+function toggleTaskStatus(index) {
+  tasks[index].done = !tasks[index].done;
+  renderTasks();
 }
