@@ -143,3 +143,8 @@ function toggleTaskStatus(index) {
   tasks[taskIndex].done = !tasks[taskIndex].done;
   renderTasks();
 }
+
+function confirmDeleteDoneTasks() {
+  tasks = tasks.filter((task) => !task.done);
+  renderTasks();
+}
